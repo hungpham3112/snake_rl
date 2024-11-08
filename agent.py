@@ -15,6 +15,7 @@ class Agent:
         self.n_games = 0
         self.gamma = 0.9  # discount rate
         self.memory = deque(maxlen=MAX_MEMORY)
+        # 11 states, hidden node = 256, output_size = 3 as 3 directions
         self.model = Linear_QNet(11, 256, 3)
         self.trainer = QTrainer(self.model, lr=LR, gamma=self.gamma)
         
